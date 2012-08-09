@@ -1,5 +1,4 @@
-require "contrast/version"
+Dir[File.dirname(__FILE__) + '/contrast/*.rb'].each {|file| require file }
 
 module Contrast
-  # Your code goes here...
 end
