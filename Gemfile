@@ -6,6 +6,7 @@ gemspec
 gem 'subtle'
 
 group :development do
+  gem 'mocha'
   gem 'guard'
   gem 'guard-minitest', :git => 'git://github.com/aspiers/guard-minitest.git'
   gem 'ruby_gntp'
