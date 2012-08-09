@@ -5,16 +5,22 @@ module Contrast
     end
 
     def examine(a, b)
-      results = []
-      @fields.each do |field|
-        first_value = -> { a.send(field) }.call_safely { a[field] }
-        second_value = -> { b.send(field) }.call_safely { b[field] }
-        results << field if the_values_the_do_not_match(first_value, second_value)
+      @fields.select do |field| 
+        first = get_the_value(a, field)
+        second = get_the_value(b, field)
+        the_values_the_do_not_match(first, second)
       end
-      results
     end
 
     private
+
+    def get_the_value(object, field)
+      begin
+        object.send(field)
+      rescue
+        object[field]
+      end
+    end
 
     def the_values_the_do_not_match(a, b)
       a != b && a.to_s != b.to_s
