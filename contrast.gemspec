@@ -4,8 +4,8 @@ require File.expand_path('../lib/contrast/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["Darren Cauthon"]
   gem.email         = ["darren@cauthon.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = %q{Contrast two objects by a defined set of values}
+  gem.summary       = %q{Contrast two objects by a defined set of values}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($\)
@@ -14,4 +14,8 @@ Gem::Specification.new do |gem|
   gem.name          = "contrast"
   gem.require_paths = ["lib"]
   gem.version       = Contrast::VERSION
+
+  gem.add_runtime_dependency 'subtle'
+  gem.add_development_dependency 'mocha'
+  gem.add_development_dependency 'rake'
 end
