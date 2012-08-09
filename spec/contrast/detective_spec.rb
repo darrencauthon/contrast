@@ -115,6 +115,26 @@ describe Contrast::Detective do
         @result[1].must_equal :last_name
       end
     end
+
+    describe 'strange matching' do
+      before do
+        @a = [:value].to_object
+        @b = [:value].to_object
+        @detective = Contrast::Detective.new :value
+      end
+
+      it "should match integers to strings" do
+        @a.value = 1; @b.value = '1'
+        @detective.examine(@a, @b).count.must_equal 0
+        @detective.examine(@b, @a).count.must_equal 0
+      end
+
+      it "should match floats to integers" do
+        @a.value = 1; @b.value = 1.0 
+        @detective.examine(@a, @b).count.must_equal 0
+        @detective.examine(@b, @a).count.must_equal 0
+      end
+    end
   end
 end
 
