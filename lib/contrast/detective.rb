@@ -7,7 +7,9 @@ module Contrast
     def examine(a, b)
       results = []
       @fields.each do |field|
-        results << field if the_values_the_do_not_match(a.send(field), b.send(field))
+        first_value = -> { a.send(field) }.call_safely { a[field] }
+        second_value = -> { b.send(field) }.call_safely { b[field] }
+        results << field if the_values_the_do_not_match(first_value, second_value)
       end
       results
     end

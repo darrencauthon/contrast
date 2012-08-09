@@ -135,6 +135,20 @@ describe Contrast::Detective do
         @detective.examine(@b, @a).count.must_equal 0
       end
     end
+
+    describe 'matching objects to hashes' do
+      before do
+        @a = [:value].to_object
+        @b = {}
+        @detective = Contrast::Detective.new :value
+      end
+
+      it "should match the two" do
+        @a.value = 1; @b[:value] = 1
+        @detective.examine(@a, @b).count.must_equal 0
+        @detective.examine(@b, @a).count.must_equal 0
+      end
+    end
   end
 end
 
