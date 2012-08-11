@@ -36,11 +36,11 @@ describe Contrast::Detective do
       end
 
       it "should return the actual value" do
-        @result[:name].actual_value.must_equal 'apple'
+        @result[:name][:actual_value].must_equal 'apple'
       end
 
       it "should return the expected value" do
-        @result[:name].expected_value.must_equal 'orange'
+        @result[:name][:expected_value].must_equal 'orange'
       end
     end
   end

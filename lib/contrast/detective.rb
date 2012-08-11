@@ -1,11 +1,6 @@
 require 'subtle'
 module Contrast
 
-  class Result
-    param_constructor
-    attr_accessor :actual_value, :expected_value
-  end
-
   class Detective
     def initialize(*args)
       @fields = args
@@ -19,8 +14,8 @@ module Contrast
       end
       result = {}
       keys.each do |key|
-        result[key] = Result.new :actual_value => get_the_value(a, key),
-                                 :expected_value => get_the_value(b, key)
+        result[key] = {:actual_value => get_the_value(a, key),
+                       :expected_value => get_the_value(b, key)}
       end
       result
     end
