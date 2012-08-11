@@ -8,6 +8,7 @@ gem 'subtle'
 gem 'awesome_print'
 
 group :development do
+  gem 'minitest'
   gem 'mocha'
   gem 'guard'
   gem 'guard-minitest', :git => 'git://github.com/aspiers/guard-minitest.git'
