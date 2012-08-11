@@ -34,6 +34,14 @@ describe Contrast::Detective do
       it "should return the field" do
         @result.keys[0].must_equal :name
       end
+
+      it "should return the original value" do
+        @result[:name].original_value.must_equal 'apple'
+      end
+
+      it "should return the actual value" do
+        @result[:name].actual_value.must_equal 'orange'
+      end
     end
   end
 
