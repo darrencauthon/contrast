@@ -5,6 +5,7 @@ gemspec
 
 gem 'rake'
 gem 'subtle'
+gem 'awesome_print'
 
 group :development do
   gem 'mocha'

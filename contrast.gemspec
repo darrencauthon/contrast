@@ -16,6 +16,7 @@ Gem::Specification.new do |gem|
   gem.version       = Contrast::VERSION
 
   gem.add_runtime_dependency 'subtle'
+  gem.add_runtime_dependency 'awesome_print'
   gem.add_development_dependency 'mocha'
   gem.add_development_dependency 'rake'
 end
