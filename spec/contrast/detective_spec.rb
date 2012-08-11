@@ -32,7 +32,7 @@ describe Contrast::Detective do
       end
 
       it "should return the field" do
-        @result[0].must_equal :name
+        @result.keys[0].must_equal :name
       end
     end
   end
@@ -71,7 +71,7 @@ describe Contrast::Detective do
       end
 
       it "should return the field" do
-        @result[0].must_equal :first_name
+        @result.keys[0].must_equal :first_name
       end
     end
 
@@ -91,7 +91,7 @@ describe Contrast::Detective do
       end
 
       it "should return the field" do
-        @result[0].must_equal :last_name
+        @result.keys[0].must_equal :last_name
       end
     end
 
@@ -111,8 +111,8 @@ describe Contrast::Detective do
       end
 
       it "should return the fields" do
-        @result[0].must_equal :first_name
-        @result[1].must_equal :last_name
+        @result.keys[0].must_equal :first_name
+        @result.keys[1].must_equal :last_name
       end
     end
 

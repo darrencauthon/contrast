@@ -5,11 +5,16 @@ module Contrast
     end
 
     def examine(a, b)
-      @fields.select do |field| 
+      keys = @fields.select do |field| 
         first = get_the_value(a, field)
         second = get_the_value(b, field)
         the_values_the_do_not_match(first, second)
       end
+      result = {}
+      keys.each do |key|
+        result[key] = nil
+      end
+      result
     end
 
     private
