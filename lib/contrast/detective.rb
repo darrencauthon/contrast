@@ -19,8 +19,8 @@ module Contrast
       end
       result = {}
       keys.each do |key|
-        result[key] = Result.new(:expected_value => get_the_value(b, key),
-                                 :actual_value => get_the_value(a, key))
+        result[key] = Result.new :actual_value => get_the_value(a, key),
+                                 :expected_value => get_the_value(b, key)
       end
       result
     end
