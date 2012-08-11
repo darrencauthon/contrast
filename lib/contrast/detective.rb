@@ -3,7 +3,7 @@ module Contrast
 
   class Result
     param_constructor
-    attr_accessor :original_value, :actual_value
+    attr_accessor :actual_value, :expected_value
   end
 
   class Detective
@@ -19,8 +19,8 @@ module Contrast
       end
       result = {}
       keys.each do |key|
-        result[key] = Result.new(:original_value => get_the_value(a, key),
-                                 :actual_value => get_the_value(b, key))
+        result[key] = Result.new(:expected_value => get_the_value(b, key),
+                                 :actual_value => get_the_value(a, key))
       end
       result
     end
