@@ -1,4 +1,4 @@
-# Contrast
+# Contrast [![Build Status](https://secure.travis-ci.org/darrencauthon/contrast.png?branch=master)](http://travis-ci.org/darrencauthon/contrast)
 
 TODO: Write a gem description
 
