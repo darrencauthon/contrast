@@ -53,6 +53,55 @@ describe "examples" do
     #this statement will force an exception
     begin
       first.contrast_with!(second, fields)
+      raise 'It did not cause an exception.'
+    rescue
+    end
+  end
+
+  it "should compare objects to hashes" do
+    fields = [:first_name, :last_name, :city, :state, :zip]
+    example_objects = fields.to_objects {[
+      ['a', 'b', 'c', 'd', 'e'],
+    ]}
+
+    first = example_objects[0]
+    second = { :first_name => 'z',
+               :last_name => 'b',
+               :city => 'c',
+               :state => 'd',
+               :zip => 'e' }
+
+    first.contrast_with(second, fields).count.must_equal 1
+    second.contrast_with(first, fields).count.must_equal 1
+
+    #this statement will force an exception
+    begin
+      first.contrast_with!(second, fields)
+      raise 'It did not cause an exception.'
+    rescue
+    end
+  end
+
+  it "should compare hashes to hashes" do
+    fields = [:first_name, :last_name, :city, :state, :zip]
+    first = { :first_name => 'a',
+              :last_name => 'b',
+              :city => 'c',
+              :state => 'd',
+              :zip => 'e' }
+    second = { :first_name => 'z',
+               :last_name => 'b',
+               :city => 'c',
+               :state => 'd',
+               :zip => 'e' }
+
+    first.contrast_with(second, fields).count.must_equal 1
+    second.contrast_with(first, fields).count.must_equal 1
+
+    #this statement will force an exception
+    begin
+      first.contrast_with!(second, fields)
+      raise 'It did not cause an exception.'
     rescue
     end
   end

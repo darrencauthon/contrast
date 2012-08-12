@@ -24,9 +24,9 @@ module Contrast
 
     def get_the_value(object, field)
       begin
-        object.send(field)
-      rescue
         object[field]
+      rescue
+        object.send(field)
       end
     end
 
