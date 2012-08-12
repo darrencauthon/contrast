@@ -2,20 +2,6 @@
 
 This gem is meant to assist in comparing objects to others, most notably in tests and specs.
 
-## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'contrast'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install contrast
-
 ## Usage
 
 Require contrast.
