@@ -30,7 +30,7 @@ Note that it did not show a result for gender, as they matched.
 If you call contrast_with!, an exception will be thrown if the two objects do not match based on the provided fields.
 
 ````ruby
-john.contrast_with howard, [:first_name, :last_name, :gender]
+john.contrast_with! howard, [:first_name, :last_name, :gender]
 # An exception was just thrown, showing the fields that do not match in the message.
 ````
 
