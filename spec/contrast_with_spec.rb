@@ -34,7 +34,7 @@ describe 'contrast with!' do
     Contrast::Detective.any_instance.expects(:examine).
       with(first, second).returns(result)
 
-    exception_thrown = -> { first.contrast_with!(second, fields) }.
+    exception_thrown = lambda { first.contrast_with!(second, fields) }.
       call_safely { true }
 
     exception_thrown.must_equal true
@@ -48,7 +48,7 @@ describe 'contrast with!' do
     Contrast::Detective.any_instance.expects(:examine).
       with(first, second).returns(result)
 
-    exception_thrown = -> { first.contrast_with!(second, fields); false }.
+    exception_thrown = lambda { first.contrast_with!(second, fields); false }.
       call_safely { true }
 
     exception_thrown.must_equal false
