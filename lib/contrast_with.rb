@@ -6,10 +6,6 @@ class Object
 
   def contrast_with!(other, fields)
     results = self.contrast_with(other, fields)
-    if results.any?
-      exception = Contrast::MatchingException.new
-      exception.results = results
-      raise exception
-    end
+    raise Contrast::MatchingException.new(results) if results.any?
   end
 end
