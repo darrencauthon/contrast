@@ -119,8 +119,8 @@ describe Contrast::Detective do
       end
 
       it "should return the fields" do
-        @result.keys[0].must_equal :first_name
-        @result.keys[1].must_equal :last_name
+        @result.keys.include?(:first_name).must_equal true
+        @result.keys.include?(:last_name).must_equal true
       end
     end
 
