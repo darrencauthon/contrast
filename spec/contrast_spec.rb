@@ -105,5 +105,24 @@ describe "examples" do
     rescue
     end
   end
+
+  it "should use the keys of the argument if it is a hash" do
+    fields = [:first_name, :last_name, :city, :state, :zip]
+    first = { :first_name => 'a',
+              :last_name => 'b',
+              :city => 'c',
+              :state => 'd',
+              :zip => 'e' }
+    second = { :first_name => 'z',
+               :last_name => 'b',
+               :city => 'c',
+               :state => 'd',
+               :zip => 'e' }
+
+    first.contrast_with(second).count.must_equal 1
+    first.contrast_with({ :first_name => 'a' }).count.must_equal 0
+    first.contrast_with({ :last_name => 'b' }).count.must_equal 0
+    first.contrast_with({ :last_name => 'c' }).count.must_equal 1
+  end
   
 end
