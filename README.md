@@ -41,3 +41,9 @@ john.contrast_with { first_name: 'Dagny', gender: 'f' }, [:gender]
 # {:gender=>{:actual_value=>"m", :expected_value=>"f"}}
 ````
 
+If you pass a hash to contrast_with, it will use the keys in the hash if a list of fields is not supplied.
+
+````ruby
+john.contrast_with { first_name: 'Dagny', gender: 'f' }
+# {:gender=>{:actual_value=>"m", :expected_value=>"f"}}
+````
