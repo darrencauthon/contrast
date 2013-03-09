@@ -1,3 +1,6 @@
+require 'coveralls'
+Coveralls.wear!
+
 require './lib/contrast.rb'
 require 'subtle'
 require 'minitest/spec'
