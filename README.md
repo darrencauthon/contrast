@@ -1,4 +1,4 @@
-# Contrast [![Build Status](https://secure.travis-ci.org/darrencauthon/contrast.png?branch=master)](http://travis-ci.org/darrencauthon/contrast)
+# Contrast [![Build Status](https://secure.travis-ci.org/darrencauthon/contrast.png?branch=master)](http://travis-ci.org/darrencauthon/contrast) [![Coverage Status](https://coveralls.io/repos/darrencauthon/contrast/badge.png?branch=master)](https://coveralls.io/r/darrencauthon/contrast)
 
 This gem is meant to assist in comparing objects to others, most notably in tests and specs.
 
