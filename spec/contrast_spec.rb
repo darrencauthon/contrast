@@ -50,12 +50,13 @@ describe "examples" do
     first.contrast_with(second, fields).count.must_equal 5
     second.contrast_with(first, fields).count.must_equal 5
 
-    #this statement will force an exception
+    error_hit = false
     begin
       first.contrast_with!(second, fields)
-      raise 'It did not cause an exception.'
     rescue
+      error_hit = true
     end
+    error_hit.must_equal true
   end
 
   it "should compare objects to hashes" do
